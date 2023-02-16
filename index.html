@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>PokeMaster ∫ FanGame Pokémon   </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script> let logs = 0;
+    let on_battle = false;
+     </script>
+     <link rel="stylesheet" href="style.css" type="text/css" />
+ </head>
+<body>
+  <div id="tools">
+    <h1> Liste des outils </h1>
+    <div id="box_outils">
+      <div id="box-content" onclick="place_block(this)" class="sel"><br><div id="content">Poser un Block</div><br></div>
+      <div id="box-content" onclick="place_bat(this)" class="sel"><br><div id="content">Poser un Bâtiment</div><br></div>
+      <div id="box-content" onclick="supp_block(this)" class="sel"><br><div id="content">Supprimer un Block</div><br></div>
+      <div id="box-content" onclick="suppr_bat(this)" class="sel"><br><div id="content" >Supprimer un Bâtiment</div><br></div>
+      <div id="box-content" onclick="selec_block(this)" class="sel el"><br><div id="content">Sélectionner un Block</div><br></div>
+      <div id="box-content" onclick="selec_bat(this)" class="sel el2"><br><div id="content">Sélectionner un Bâtiment</div><br></div>
+      <div id="box-content" onclick="moove_bat(this)" class="sel"><br><div id="content">Déplacer un Bâtiment</div><br></div>
+      <div id="box-content" onclick="save_world()" class="ee"><br><div id="content">Sauvegarde manuelle</div><br></div>
+      <div id="box-content" onclick="load_creation_map()" class="ee"><br><div id="content">Créer une nouvelle map</div><br></div>
+      <div id="box-content" onclick="free_djeska()" class="selectable"><br><div id="content">Mouvement Libre / Mouvement en fonction du quadrillage</div><br></div>
+
+    </div>
+    
+  </div> 
+  <div id="decos_settings" >
+        <h1> Paramètres objet </h1>
+    <div id="decos_flex">
+      <h2> Type : </h2>
+      <div id="type" class="d_b">  </div>
+
+  <br>
+</br>
+  <h2> Coordonnées : </h2>
+    <div id="coord" class="d_b"> 
+
+  </div>
+  <br>
+</br>
+<h2> Taille : </h2>
+    <div id="lenght" class="d_b"> </div>
+
+  <br>
+</br>
+<h2> Apparence : </h2>
+
+    <div id="lok" class="d_b"> </div>
+
+  <br>
+</br>
+<h2> Rotation : </h2>
+    <div id="rotation" class="d_b">  </div>
+
+  <br>
+</br>
+
+    <div id="apply" onclick="apply(this)" > <br><div>  Appliquez les modifications  </div><br>  </div>
+    <br>
+  </br>
+    <div id="apply" onclick="del(this)" class="red"><br><div> Supprimez cet objet </div><br></div>
+    <br>
+  </br>
+  <h1> _______________ </h1>
+   </div>
+   <br>
+
+  </div>
+  <canvas id="game" ></canvas>
+  <section id="map_settings" class="disable">
+    <h1> Paramètres de la nouvelle Map </h1>
+
+      <input type="text" name="HT" id="idHT" placeholder="Nom de la map">
+      <br><br>
+
+      <input type="text" name="HT" id="idHT1" placeholder="Largeur (multiple de 32)">
+      <br><br>
+
+      <input type="text" name="HT" id="idHT2" placeholder="Largueur (multiple de 32)">
+      <br><br>
+ 
+      <input type="text" name="HT" id="idHT3" placeholder="Font (Nom du bloc)">
+      <br><br>
+
+      <button onclick="label_to_map_creation()"><br><div> Créer votre map </div><br></button>
+      <br><br>
+      <br><br>
+      <img src="cross2.png" onclick="unload_map_creation()"/>
+      
+
+      <br>
+  
+    <h1> _______________ </h1>
+    <br>
+
+  </section>
+
+<script src="client/platform.js"></script>
+<script src="client/assets.js"></script>
+<script src="client/game.js"></script>
+
+<script src="client/editor.js"></script>
+</body>
+</html>
